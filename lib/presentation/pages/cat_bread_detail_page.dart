@@ -19,6 +19,15 @@ class CatBreedDetailPage extends StatelessWidget {
             height: 250,
             width: double.infinity,
             fit: BoxFit.cover,
+            errorBuilder: (BuildContext context, Object exception,
+                StackTrace? stackTrace) {
+              return Image.asset(
+                'assets/images/sin_imagen.jpg',
+                height: 250,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              );
+            },
           ),
           Expanded(
             child: Scrollbar(
@@ -31,7 +40,7 @@ class CatBreedDetailPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "${breed.description} ${breed.description} ${breed.description}${breed.description} ${breed.description} ${breed.description} ${breed.description}${breed.description}",
+                        "${breed.description}",
                         style: const TextStyle(fontSize: 16),
                       ),
                       const SizedBox(height: 16),

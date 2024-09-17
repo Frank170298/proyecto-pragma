@@ -93,6 +93,7 @@ class _CatBreedPageState extends State<CatBreedPage> {
                             : const SizedBox.shrink();
                       }
                       final breed = filteredBreeds[index];
+                      print(breed.name);
                       return InkWell(
                         onTap: () {
                           Navigator.push(
