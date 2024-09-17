@@ -105,9 +105,27 @@ class _CatBreedPageState extends State<CatBreedPage> {
                           );
                         },
                         child: Card(
+                          elevation: 15,
                           margin: const EdgeInsets.all(10),
                           child: Column(
                             children: [
+                              Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(breed.name,
+                                        style: const TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold)),
+                                    Text('Más...',
+                                        style: const TextStyle(
+                                          fontSize: 15,
+                                        )),
+                                  ],
+                                ),
+                              ),
                               Image.network(
                                 "https://cdn2.thecatapi.com/images/${breed.referenceImageId}.jpg",
                                 height: 150,
@@ -119,19 +137,6 @@ class _CatBreedPageState extends State<CatBreedPage> {
                                     fit: BoxFit.cover,
                                   );
                                 },
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(breed.name,
-                                        style: const TextStyle(
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.bold)),
-                                  ],
-                                ),
                               ),
                               Padding(
                                 padding: const EdgeInsets.symmetric(

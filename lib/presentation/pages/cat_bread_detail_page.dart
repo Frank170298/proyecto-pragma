@@ -39,8 +39,9 @@ class CatBreedDetailPage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      // En esta parte del codigo replico la descripcion con el fin de poder visualizar el scroll
                       Text(
-                        "${breed.description}",
+                        "${breed.description} \n${breed.description} \n${breed.description} \n${breed.description} \n${breed.description} \n${breed.description}",
                         style: const TextStyle(fontSize: 16),
                       ),
                       const SizedBox(height: 16),
