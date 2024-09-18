@@ -1,13 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:pruyeba_tecnica_pragma/domain/entities/cat_breed.dart';
+import 'package:flutter/services.dart';
 
 class CatBreedDetailPage extends StatelessWidget {
   final CatBreed breed;
 
   const CatBreedDetailPage({super.key, required this.breed});
+  static const platform =
+      MethodChannel('com.example.pruyeba_tecnica_pragma/audio');
+
+  Future<void> _playCatSound() async {
+    try {
+      await platform.invokeMethod('playCatSound');
+    } on PlatformException catch (e) {
+      print("${e.message}.");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+    _playCatSound();
     return Scaffold(
       appBar: AppBar(
         title: Text(breed.name),
